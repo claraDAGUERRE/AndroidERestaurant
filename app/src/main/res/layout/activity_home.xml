@@ -1,40 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#0C0C0C"
+    tools:context=".HomeActivity">
 
     <Button
         android:id="@+id/starters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
+        android:layout_width="207dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="88dp"
+        android:backgroundTint="#7E4B1E"
+        android:fontFamily="serif"
         android:text="Entrées"
+        android:textColor="#FBFAFA"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/dishes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Plats"
-        app:layout_constraintBottom_toTopOf="@+id/deserts"
+        android:layout_width="207dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#7E4B1E"
+        android:fontFamily="serif"
+        android:text="@string/home_dishes"
+        android:textColor="#FFFEFE"
+        app:layout_constraintBottom_toTopOf="@+id/desserts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/starters"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.464" />
 
     <Button
-        android:id="@+id/deserts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/desserts"
+        android:layout_width="207dp"
+        android:layout_height="51dp"
         android:layout_marginBottom="188dp"
+        android:backgroundTint="#7E4B1E"
+        android:fontFamily="serif"
         android:text="Desserts"
+        android:textColor="#F4F3F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -42,13 +52,39 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="159dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
         android:text="Bienvenue Au Bistrot !"
+        android:textColor="#F1EDED"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.301" />
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="382dp"
+        android:layout_height="190dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009"
+        app:srcCompat="@drawable/bistrologo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="107dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.932" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

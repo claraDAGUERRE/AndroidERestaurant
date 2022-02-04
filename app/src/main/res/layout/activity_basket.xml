@@ -4,30 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DishesActivity">
+    tools:context=".BasketActivity">
 
-    <TextView
-        android:id="@+id/mainDishTitle"
+    <Button
+        android:id="@+id/buttonOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="commander"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintTop_toBottomOf="@+id/basketList" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/dishList"
-        android:layout_width="379dp"
-        android:layout_height="426dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/basketList"
+        android:layout_width="357dp"
+        android:layout_height="478dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainDishTitle"
-        app:layout_constraintVertical_bias="0.285"
-        tools:itemCount="5"
-        tools:listitem="@layout/category_cell" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
