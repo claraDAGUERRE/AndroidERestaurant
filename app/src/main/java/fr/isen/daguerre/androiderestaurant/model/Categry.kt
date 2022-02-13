@@ -2,9 +2,7 @@ package fr.isen.daguerre.androiderestaurant.model
 
 import java.io.Serializable
 
-data class Dish(
+data class Category(
     val name_fr : String,
-    val images : List<String>,
-    val ingredients : List<Ingredients>,
-    val prices : List<Price>
+    val items : List<Dish>
 ) : Serializable

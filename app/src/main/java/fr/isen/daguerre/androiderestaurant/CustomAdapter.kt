@@ -2,13 +2,15 @@ package fr.isen.daguerre.androiderestaurant
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import fr.isen.daguerre.androiderestaurant.R
 import fr.isen.daguerre.androiderestaurant.databinding.CategoryCellBinding
 import fr.isen.daguerre.androiderestaurant.model.Dish
-import fr.isen.daguerre.androiderestaurant.model.DishModel
 
-class CustomAdapter(val dishes: List<DishModel>, val onDishClicked: (DishModel) -> Unit) : RecyclerView.Adapter<CustomAdapter.DishViewHolder>() {
+class CustomAdapter(val dishes: List<Dish>, val onDishClicked: (Dish) -> Unit) : RecyclerView.Adapter<CustomAdapter.DishViewHolder>() {
 
     class DishViewHolder(val binding: CategoryCellBinding): RecyclerView.ViewHolder(binding.root){
         val items = binding.items
@@ -30,16 +32,17 @@ class CustomAdapter(val dishes: List<DishModel>, val onDishClicked: (DishModel) 
         holder.items.text = dishes[position].name_fr
 
         Picasso.get()
-            .load(dishes[position].getFirstPicture())
+            .load(dishes[position].images[0])
             .error(R.drawable.bistrologo)
             .placeholder(R.drawable.bistrologo)
             .into(holder.pictures)
 
-        holder.prices.text = dishes[position].getFormattedPrice()
+       // holder.prices.text = "${items.prices[0].price} €"
 
         holder.itemView.setOnClickListener{
             onDishClicked( dishes[position])
         }
+
 
 
     }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidERestaurant</string>
+    <string name="app_name">AndroidERestaurantDaguerre</string>
     <string name="home_starters">Entrées</string>
     <string name="home_dishes">Plats</string>
     <string name="home_desserts">Desserts</string>
@@ -18,4 +18,23 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+
+    //basket
+
+    <string name="basketTitle">Votre panier</string>
+    <string name="basketButtonBuy">Passer la commande</string>
+    <string name="basketIconDeleteContentDescription">Button de suppression d\'un item</string>
+    <string name="basketButtonDeleteAllContentDescription">Button de suppression de tout le panier</string>
+    <string name="basketDeleteAllTxt">Votre panier a été supprimé</string>
+    <string name="quantity">Quantité : </string>
+    <string name="basketTotalQuantity">Quantité totale : </string>
+    <string name="totalPrice">Total : </string>
+
+    <!-- Shared Preferences -->
+    <string name="spFileName">SharedPreferences</string>
+    <string name="spTotalQuantity">totalBasketQuantity</string>
+    <string name="spTotalPrice">totalBasketPrice</string>
+    <string name="spUserId">userId</string>
+
+    <string name="addToBasket">Ajout au panier réussi</string>
 </resources>

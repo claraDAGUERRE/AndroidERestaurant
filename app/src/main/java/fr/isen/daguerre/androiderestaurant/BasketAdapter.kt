@@ -1,54 +1,45 @@
 package fr.isen.daguerre.androiderestaurant
 
-    private lateinit var binding: BasketCellBinding
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import fr.isen.daguerre.androiderestaurant.databinding.BasketCellBinding
+import fr.isen.daguerre.androiderestaurant.model.BasketIems
 
-    class BasketListAdapter(private val data: MutableList<ItemBasket>, private val deleteItemListener: (ItemBasket) -> Unit) : RecyclerView.Adapter<BasketAdapter.BasketHolder>() {
-        override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-        ): BasketHolder {
-            binding = BasketCellBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-            return BasketHolder(binding)
-        }
 
-        override fun onBindViewHolder(holder: BasketHolder, position: Int) {
-            val data : ItemBasket = data[position]
-            holder.title.text = data.dish.title
-            holder.tarif.text = data.dish.getFormattedPrice()
-            holder.number.text = data.quantity.toString()
-            val picture = data.dish.getFirstPicture()
-            val picasso = Picasso.get()
-            if (picture != null) {
-                picasso
-                    .load(picture)
-                    .placeholder(R.drawable.logo)
-                    .into(holder.image)
-            } else {
-                picasso
-                    .load(R.drawable.not_found)
-                    .into(holder.image)
-            }
-            holder.remove.setOnClickListener {
-                deleteItem(position)
-                deleteItemListener.invoke(data)
-            }
-        }
+class BasketAdapter(private val baskets: List<BasketIems>, private val onBasketClick: (BasketIems) -> Unit) : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketViewHolder {
+        return BasketViewHolder(
+            BasketCellBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        )
+    }
 
-        private fun deleteItem(position: Int) {
-            data.removeAt(position)
-            notifyDataSetChanged()
-        }
+    override fun onBindViewHolder(holder: BasketViewHolder, position: Int) {
+        val basket = baskets[position]
 
-        override fun getItemCount(): Int {
-            return data.size
-        }
+        holder.name.text = basket.dish.name_fr
 
-        class BasketHolder(binding: BasketCellBinding): RecyclerView.ViewHolder(binding.root){
-            val title = binding.dishName
-            val tarif = binding.dishPrice
-            val image = binding.dishPicture
-            val number = binding.nbItemsBasket
-            val remove = binding.removePicture
+        val price = "Total : ${basket.dish.prices[0].price.toFloat() * basket.quantity} €"
+        holder.price.text = price
+
+        val quantity = "Quantité : ${basket.quantity}"
+        holder.quantity.text = quantity
+
+        holder.delete.setOnClickListener {
+            onBasketClick(basket)
         }
+    }
+
+    override fun getItemCount(): Int {
+        return baskets.size
+    }
+
+    class BasketViewHolder(binding : BasketCellBinding) : RecyclerView.ViewHolder(binding.root) {
+        val name: TextView = binding.basketCellTitle
+        val price: TextView = binding.basketCellPrice
+        val quantity: TextView = binding.basketCellQuantity
+        val delete: ImageView = binding.basketCellIconDelete
     }
 }

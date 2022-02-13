@@ -14,7 +14,6 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import fr.isen.daguerre.androiderestaurant.model.Dish
-import fr.isen.daguerre.androiderestaurant.model.DishModel
 import fr.isen.daguerre.androiderestaurant.model.DishResult
 import org.json.JSONObject
 
@@ -57,8 +56,13 @@ class DishesActivity : AppCompatActivity() {
             })
 
         Volley.newRequestQueue(this).add(request)
+
+        binding.BasketImage.setOnClickListener {
+            val intent = Intent(this, BasketActivity::class.java)
+            startActivity((intent))
+        }
     }
-    private fun displayDishes(dishResult: List<DishModel>){
+    private fun displayDishes(dishResult: List<Dish>){
 
         binding.dishList.layoutManager = LinearLayoutManager(this)
         binding.dishList.adapter = CustomAdapter(dishResult) {
@@ -67,6 +71,7 @@ class DishesActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
 
     }
 

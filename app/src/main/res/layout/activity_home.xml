@@ -7,6 +7,7 @@
     android:background="#0C0C0C"
     tools:context=".HomeActivity">
 
+
     <Button
         android:id="@+id/starters"
         android:layout_width="207dp"
@@ -77,14 +78,37 @@
         app:srcCompat="@drawable/bistrologo" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="107dp"
-        android:layout_height="105dp"
+        android:id="@+id/toque"
+        android:layout_width="112dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintHorizontal_bias="0.899"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+        app:srcCompat="@drawable/chapeau" />
+
+    <ImageView
+        android:id="@+id/etoile1"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toque"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/etoile" />
+
+    <ImageView
+        android:id="@+id/etoile2"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toEndOf="@+id/etoile1"
+        app:layout_constraintTop_toBottomOf="@+id/toque"
+        app:srcCompat="@drawable/etoile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

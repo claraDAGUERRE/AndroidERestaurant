@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConnectionActivity">
+    android:background="#000000"
+    tools:context=".ConnexionActivity">
 
     <EditText
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
+        android:background="#E3E3E3"
         android:ems="10"
         android:hint="Nom d'utilisateur"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="#CCCCCC"
         android:ems="10"
         android:hint="Mot de passe"
         android:inputType="textPassword"
@@ -35,13 +37,14 @@
         android:layout_width="210dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
+        android:background="#976D30"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userPassword" />
 
     <TextView
-        android:id="@+id/loginTitle"
+        android:id="@+id/signUpTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="189dp"
@@ -49,6 +52,7 @@
         android:layout_marginBottom="50dp"
         android:fontFamily="sans-serif-black"
         android:text="CONNECTION"
+        android:textColor="#FAFAFA"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/userName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,10 +64,21 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="CRÉER UN COMPTE"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/toqueImage"
+        android:layout_width="100dp"
+        android:layout_height="94dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/chapeau" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
